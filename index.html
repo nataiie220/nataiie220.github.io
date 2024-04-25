@@ -27,7 +27,8 @@
             cursor: pointer;
             font-family: Times, New Roman;
             /* 指定字體 */
-             transition: border-color 0.3s ease; /* 添加邊框顏色的過渡效果 */
+            transition: border-color 0.3s ease;
+            /* 添加邊框顏色的過渡效果 */
         }
 
         .scroll-to-top:hover {
@@ -79,10 +80,12 @@
         .navbar-brand {
             margin-left: 20px;
             /* 調整 navbar-brand 與左側的距離 */
-            color: rgb(161, 224, 146);
+            color: #cf82e2;
             /* 更改文字顏色 */
-            font-family: Times, New Roman;
+            font-family: "Anton", sans-serif;
             /* 指定字體 */
+            font-weight: 400;
+            font-style: normal;
             font-size: 25px;
             /* 指定字體大小 */
             font-weight: bold;
@@ -93,24 +96,24 @@
         .dropdown-menu .dropdown-divider {
             font-family: Times, New Roman;
             /* 更改字體 */
-            font-size: 20px;
+            font-size: 18px;
             /* 更改字體大小 */
             font-weight: bold;
             /* 更改字體粗細 */
-            color: #191b18;
+            color: #cf82e2;
             /* 更改字體顏色 */
         }
 
         .navbar-nav .nav-link.active,
         .navbar-nav .nav-link.dropdown-toggle,
         .nav-item .nav-link.disabled {
-            font-family: Times, New Roman;
+            font-family: "Jersey 15 Charted", sans-serif;
             /* 更改字體 */
-            font-size: 20px;
+            font-size: 18px;
             /* 更改字體大小 */
             font-weight: bold;
             /* 更改字體粗細 */
-            color: #38383a;
+            color: #cf82e2;
             /* 更改字體顏色 */
         }
     </style>
@@ -134,7 +137,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                About me!
+                                About me
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="https://www.instagram.com/nata1ie.h/">🩷
@@ -290,7 +293,7 @@
                     <span class="close" onclick="closeModal()">&times;</span>
                     <img class="modal-content" id="zoomedImg">
                 </div>
-                
+
 
 
             </div>
@@ -325,14 +328,14 @@
             function openModal() {
                 document.getElementById('zoomedImage').style.display = "block";
             }
-        
+
             function closeModal() {
                 document.getElementById('zoomedImage').style.display = "none";
             }
-        
+
             var images = document.querySelectorAll('.card-img-top');
-            images.forEach(function(img) {
-                img.addEventListener('click', function() {
+            images.forEach(function (img) {
+                img.addEventListener('click', function () {
                     var zoomedImg = document.getElementById('zoomedImg');
                     zoomedImg.src = this.src;
                     zoomedImg.style.maxWidth = "70%"; // 設置最大寬度
@@ -342,11 +345,11 @@
                     openModal();
                 });
             });
-            
+
         </script>
-        
-        
-        
+
+
+
 
 
 
