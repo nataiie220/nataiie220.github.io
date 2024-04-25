@@ -1,13 +1,325 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nataiie</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>⑅୨୧⑅*⑅୨୧⑅*⑅୨୧⑅*⑅୨୧⑅</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            /* 默認隱藏 */
+            z-index: 9999;
+            font-size: 50px;
+            padding: 10px 20px;
+            background-color: transparent;
+            /* 設置背景色為透明 */
+            color: #222626;
+            border: 5px solid #91d8e0;
+            /* 添加邊框 */
+            border-radius: 100px;
+            cursor: pointer;
+            font-family: Times, New Roman;
+            /* 指定字體 */
+             transition: border-color 0.3s ease; /* 添加邊框顏色的過渡效果 */
+        }
+
+        .scroll-to-top:hover {
+            background-color: #f3fcae;
+            /* 更改悬停時的背景色 */
+            color: #2b2a2a;
+            /* 更改悬停時的字體色 */
+        }
+
+        body {
+            background-color: #dfc8f3;
+            /* 自定義背景色 */
+        }
+
+        .card {
+            margin-bottom: 20px;
+            /* 设置卡片之间的默认间距 */
+        }
+
+        .card:last-child {
+            margin-bottom: 0;
+            /* 最后一个卡片不要底部间距 */
+        }
+
+        .card-img-top {
+            height: 500px;
+            /* 控制图片高度 */
+            object-fit: cover;
+            /* 保持图片比例并填充整个容器 */
+        }
+
+        /* 如果需要在特定屏幕尺寸下更改间距，可以使用媒体查询 */
+        @media (max-width: 767.98px) {
+            .card {
+                margin-bottom: 10px;
+                /* 在小屏幕下减小间距 */
+            }
+
+            .carousel-item img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>annyenog</h1>
-</body>
+    <style>
+        .navbar-brand {
+            margin-left: 20px;
+            /* 調整 navbar-brand 與左側的距離 */
+            color: rgb(161, 224, 146);
+            /* 更改文字顏色 */
+            font-family: Times, New Roman;
+            /* 指定字體 */
+            font-size: 25px;
+            /* 指定字體大小 */
+            font-weight: bold;
+            /* 指定字體粗細 */
+        }
+
+        .dropdown-menu .dropdown-item,
+        .dropdown-menu .dropdown-divider {
+            font-family: Times, New Roman;
+            /* 更改字體 */
+            font-size: 20px;
+            /* 更改字體大小 */
+            font-weight: bold;
+            /* 更改字體粗細 */
+            color: #191b18;
+            /* 更改字體顏色 */
+        }
+
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.dropdown-toggle,
+        .nav-item .nav-link.disabled {
+            font-family: Times, New Roman;
+            /* 更改字體 */
+            font-size: 20px;
+            /* 更改字體大小 */
+            font-weight: bold;
+            /* 更改字體粗細 */
+            color: #38383a;
+            /* 更改字體顏色 */
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">NATAIIE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">HELLO☆☆☆</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                About me!
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="https://www.instagram.com/nata1ie.h/">🩷
+                                        Instagram</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.facebook.com/profile.php?id=100003223002753">💙 Facebook</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">☆☆☆</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        </nav>
+        <div id="carouselExample" class="carousel slide">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="a.jpg" class="d-block w-60" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="f.jpg" class="d-block w-60" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="h.jpg" class="d-block w-60" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container my-5"></div>
+            <div class="row">
+                <!-- 第一列貼文 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <style>
+                            .card-img-top {
+                                margin-bottom: 20px;
+                                /* 調整照片與貼文框架之間的距離 */
+                            }
+
+                            .card {
+                                margin-left: 50px;
+                                margin-right: 50px;
+                                /* 調整貼文框架與左側邊界的距離 */
+                            }
+
+                            .card-body {
+                                padding-top: 20px;
+                                /* 調整貼文內容與貼文框架之間的距離 */
+                            }
+                        </style>
+
+
+                        <img src="photo3.jpg" class="card-img-top" alt="Post 3">
+                        <div class="card-body">
+                            <h5 class="card-title">· · • • • ✤ • • • · ·</h5>
+                            <p class="card-text">ᴬʳᵒᵘⁿᵈ ᵗʰᵉ ᵍᵃˡᵃˣʸ, ᵗʰᵉʳᵉ ᵃʳᵉ ⁿᵒ ᵇʳⁱᵍʰᵗᵉʳ ˢᵗᵃʳˢ ᵗʰᵃⁿ ʸᵒᵘ.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="photo2.jpg" class="card-img-top" alt="Post 2">
+                        <div class="card-body">
+                            <h5 class="card-title">♡ ••┈┈┈┈•• ♡</h5>
+                            <p class="card-text">ᴸⁱᵛᵉ ᵃ ᵍᵒᵒᵈ ˡⁱᶠᵉ ᵐᵉᵉᵗ ˢˡᵒʷˡʸ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="photo1.jpg" class="card-img-top" alt="Post 1">
+                        <div class="card-body">
+                            <h5 class="card-title">* ੈ✩‧₊˚</h5>
+                            <p class="card-text">ᴵ ʰᵒᵖᵉ ʸᵒᵘ'ʳᵉ ʰᵉʳᵉ ᶠᵒʳ ᵐᵉ </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 第二列貼文 -->
+            <div class="row">
+                <div class="col-md-4 mb-4 mt-1">
+                    <div class="card">
+                        <img src="photo4.jpg" class="card-img-top" alt="Post 4">
+                        <div class="card-body">
+                            <h5 class="card-title">· · • • • ✤ • • • · ·</h5>
+                            <p class="card-text">ᴰᵒⁿ'ᵗ ᵉˣᵖᵉᶜᵗ ᵖᵉᵒᵖˡᵉ ᵃⁿᵈ ᵖᵉᵒᵖˡᵉ ᵗᵒ ᵇᵉ ᵉˣᵖᵉᶜᵗᵉᵈ ᵇʸ ᵃⁿʸᵒⁿᵉ .</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="photo5.jpg" class="card-img-top" alt="Post 5">
+                        <div class="card-body">
+                            <h5 class="card-title">♡ ••┈┈┈┈•• ♡</h5>
+                            <p class="card-text">ʸᵒᵘ ᵃʳᵉ ᵇᵃᶜᵏˡⁱᵗ ʷⁱᵗʰ ᵃˡˡ ᵗʰᵉ ᵍᵒᵒᵈ ᵗʰⁱⁿᵍˢ ⁱⁿ ᵗʰⁱˢ ʷᵒʳˡᵈ.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="photo6.jpg" class="card-img-top" alt="Post 6">
+                        <div class="card-body">
+                            <h5 class="card-title">* ੈ✩‧₊˚</h5>
+                            <p class="card-text">ᴾʳᵒᵇᵃᵇˡʸ ᵍʳᵒʷⁱⁿᵍ ᵘᵖ ᵃⁿᵈ ˡᵒˢⁱⁿᵍ ᵐʸ ᶠᵒʳᵐᵉʳˢᵉˡᶠ.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        </div>
+
+
+        <!-- 回到頂部按鈕 -->
+        <button class="scroll-to-top" onclick="scrollToTop()">☝︎</button>
+
+        <script>
+            // 滾動到頁面頂部的函數
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+
+            // 監聽頁面滾動事件，顯示或隱藏回到頂部按鈕
+            window.addEventListener("scroll", function () {
+                var scrollButton = document.querySelector(".scroll-to-top");
+                if (window.pageYOffset > 100) {
+                    scrollButton.style.display = "block";
+                } else {
+                    scrollButton.style.display = "none";
+                }
+            });
+        </script>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
 </html>
