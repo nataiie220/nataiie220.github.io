@@ -286,6 +286,11 @@
                         </div>
                     </div>
                 </div>
+                <div id="zoomedImage" class="modal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <img class="modal-content" id="zoomedImg">
+                </div>
+                
 
 
             </div>
@@ -316,6 +321,32 @@
                 }
             });
         </script>
+        <script>
+            function openModal() {
+                document.getElementById('zoomedImage').style.display = "block";
+            }
+        
+            function closeModal() {
+                document.getElementById('zoomedImage').style.display = "none";
+            }
+        
+            var images = document.querySelectorAll('.card-img-top');
+            images.forEach(function(img) {
+                img.addEventListener('click', function() {
+                    var zoomedImg = document.getElementById('zoomedImg');
+                    zoomedImg.src = this.src;
+                    zoomedImg.style.maxWidth = "70%"; // 設置最大寬度
+                    zoomedImg.style.maxHeight = "70%"; // 設置最大高度
+                    zoomedImg.style.width = "auto"; // 設置寬度自動適應
+                    zoomedImg.style.height = "auto"; // 設置高度自動適應
+                    openModal();
+                });
+            });
+            
+        </script>
+        
+        
+        
 
 
 
