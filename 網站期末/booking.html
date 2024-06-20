@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>預約︎︎𓂃⟡</title>
+    <!-- 引入 Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link
+        href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Oswald:wght@200..700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        h1 {
+            font-size: 30px; /* 修改标题字体大小 */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        /* 自定义网站整体背景和颜色 */
+        body {
+            background-color: #f6a7f2;
+            /* 设置整体背景颜色 */
+            color: #333;
+            /* 设置文本颜色 */
+            font-family: "LXGW WenKai TC", cursive;
+            /* 设置字体 */
+        }
+
+        .btn-primary {
+            background-color: #d95494;
+            /* 设置按钮背景颜色 */
+            border-color: #333;
+            /* 设置按钮边框颜色 */
+            color: #333
+        }
+
+        .btn-primary:hover {
+            background-color: #c24989;
+            /* 设置按钮鼠标悬停时的背景颜色 */
+            border-color: #c24989;
+            /* 设置按钮鼠标悬停时的边框颜色 */
+        }
+
+        .form-control {
+            border-color: #d95494;
+            /* 设置表单输入框的边框颜色 */
+        }
+
+        .form-control:focus {
+            border-color: #c24989;
+            /* 设置表单输入框获取焦点时的边框颜色 */
+            box-shadow: 0 0 0 0.25rem rgba(217, 84, 148, 0.25);
+            /* 设置表单输入框获取焦点时的阴影效果 */
+        }
+
+        /* 自定义月历样式 */
+        .calendar {
+            margin-top: 20px;
+            background-color: #fdcce1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .calendar-header h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .calendar-body {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            color: #333;
+            /* 文字颜色 */
+            background-color: transparent;
+            /* 背景色透明 */
+            width: 30px;
+            /* 调整宽度 */
+            height: 30px;
+            /* 调整高度 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed #d95494;
+            /* 虚线边框样式 */
+            margin: 10px 0;
+            /* 顶部和底部外边距为10px，左右外边距为0 */
+        }
+
+        .calendar-day.marked {
+            background-color: #d95494;
+            border: none;
+            /* 取消边框 */
+        }
+
+        .calendar-day:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* 说明性区域样式 */
+        .legend {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .legend-item span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .legend-item .dot-marked {
+            background-color: #d95494;
+        }
+
+        .legend-item .dot-marked span {
+            background-color: #d95494;
+        }
+
+        .legend-item p {
+            margin: 20;
+        }
+
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            /* 确保按钮在其他内容之上 */
+            background-color: rgba(240, 101, 149, 0.8);
+            /* 设置背景色为透明果冻感的效果 */
+            border-radius: 50%;
+            /* 将按钮设为圆形 */
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            /* 添加阴影效果 */
+            transition: background-color 0.3s ease;
+            /* 添加过渡效果 */
+        }
+
+        .fixed-button:hover {
+            background-color: rgba(240, 187, 219, 0.9);
+            /* 鼠标悬停时微调背景色 */
+        }
+
+        .fixed-button a {
+            text-decoration: none;
+            color: #333;
+            /* 按钮文字颜色 */
+        }
+
+        .calendar-day {
+            position: relative;
+            /* 让内部元素相对于日期元素定位 */
+            text-align: center;
+            /* 将日期文本居中对齐 */
+            padding: 10px;
+            /* 可根据需要调整日期元素的内边距 */
+            border: 1px solid #ccc;
+            /* 可选：为日期元素添加边框 */
+            margin-bottom: 10px;
+            /* 可选：调整日期元素之间的间距 */
+        }
+
+        .calendar-mark {
+            position: absolute;
+            /* 将文字区域相对于日期元素定位 */
+            top: 0;
+            /* 控制文字区域的位置 */
+            right: -15px;
+            /* 控制文字区域的位置，根据需要调整 */
+            background-color: #d95494;
+            /* 设置文字区域的背景颜色 */
+            color: #333;
+            /* 设置文字的颜色 */
+            font-size: 12px;
+            /* 设置文字的字体大小 */
+            padding: 2px 5px;
+            /* 设置文字区域的内边距 */
+            border-radius: 3px;
+            /* 设置文字区域的圆角 */
+            white-space: nowrap;
+            /* 防止文字换行 */
+            z-index: 1;
+            /* 确保文字区域位于日期元素上层 */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">預約︎︎𓂃⟡</h1>
+        <!-- 月历部分 -->
+        <div class="calendar">
+            <div class="calendar-header">
+                <h3>2024年6月</h3>
+            </div>
+            <div class="calendar-body">
+                <div class="calendar-day">1</div>
+                <div class="calendar-day">2</div>
+                <div class="calendar-day">3</div>
+                <div class="calendar-day">4</div>
+                <div class="calendar-day">5</div>
+                <div class="calendar-day">6</div>
+                <div class="calendar-day marked">7<div class="calendar-mark">12
+                    :00 | 15:00
+                </div>
+                </div>
+
+                <div class="calendar-day">8</div>
+                <div class="calendar-day">9</div>
+                <div class="calendar-day">10</div>
+                <div class="calendar-day">11</div>
+                <div class="calendar-day marked">12<div class="calendar-mark">12
+                    :00
+                </div>
+                </div>
+                <div class="calendar-day">13</div>
+                <div class="calendar-day">14</div>
+                <div class="calendar-day">15</div>
+                <div class="calendar-day">16</div>
+                <div class="calendar-day">17</div>
+                <div class="calendar-day">18</div>
+                <div class="calendar-day">19</div>
+                <div class="calendar-day">20</div>
+                <div class="calendar-day">21</div>
+                <div class="calendar-day">22</div>
+                <div class="calendar-day">23</div>
+                <div class="calendar-day">24</div>
+                <div class="calendar-day marked">25<div class="calendar-mark">12
+                    :00 | 15:00 | 18:00
+                </div></div>
+                <div class="calendar-day">26</div>
+                <div class="calendar-day">27</div>
+                <div class="calendar-day">28</div>
+                <div class="calendar-day">29</div>
+                <div class="calendar-day">30</div>
+            </div>
+        </div>
+
+        <!-- 说明性区域 -->
+        <div class="legend">
+            <div class="legend-item">
+                <span class="dot-marked"></span>
+                <p>可預約日期</p>
+            </div>
+        </div>
+
+
+        <!-- 表单部分 -->
+        <form>
+            <div class="mt-5 mb-3">
+                <label for="date" class="form-label">日期</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="time" class="form-label">時間</label>
+                <input type="time" class="form-control" id="time" name="time" required>
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">姓名</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="contact" class="form-label">聯絡資訊</label>
+                <input type="text" class="form-control" id="contact" name="contact" required>
+            </div>
+            <button type="submit" class="btn btn-primary">提交預約</button>
+        </form>
+    </div>
+    <button class="fixed-button" onclick="window.location.href='index.html'">
+        ⬆nataiie
+    </button>
+    <footer class="text-black text-center py-3 mt-5">
+        <p>&copy; 2024 nataiie'nail</p>
+    </footer>
+
+
+
+    <!-- 引入 Bootstrap 和相关 JavaScript 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-Sc4TEyrO64yZfsqk+3RB1c2kqOYd+uE5Lbc3jS8lo2WbGOvFk/K4NgZO6IaX5S5P"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
