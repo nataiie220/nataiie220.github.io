@@ -1,359 +1,453 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>⑅୨୧⑅*⑅୨୧⑅*⑅୨୧⑅*⑅୨୧⑅</title>
+    <title>naTaiie'sNail⑅୧⑅*⑅୨୧⑅</title>
+    <!-- 引入 Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+    <!-- 引入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Oswald:wght@200..700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+    <!-- 引入自定義 CSS -->
+    <link rel="stylesheet" href="style.css">
     <style>
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-            /* 默認隱藏 */
-            z-index: 9999;
-            font-size: 50px;
-            padding: 10px 20px;
-            background-color: transparent;
-            /* 設置背景色為透明 */
-            color: #222626;
-            border: 5px solid #91d8e0;
-            /* 添加邊框 */
-            border-radius: 100px;
-            cursor: pointer;
-            font-family: Times, New Roman;
-            /* 指定字體 */
-            transition: border-color 0.3s ease;
-            /* 添加邊框顏色的過渡效果 */
+        /* 自定義樣式放這裡 */
+        .carousel-item img {
+            width: 100%;
+            /* 確保圖片滿寬度顯示 */
+            height: 100%;
+            /* 自動調整高度 */
         }
 
-        .scroll-to-top:hover {
-            background-color: #f3fcae;
-            /* 更改悬停時的背景色 */
-            color: #2b2a2a;
-            /* 更改悬停時的字體色 */
+        
+
+        /* 定义闪烁动画 */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
+        /* 应用闪烁动画到 p 元素 */
+        .blink-text {
+            animation: blink 1s infinite;
+            /* 闪烁动画持续时间为 1 秒，无限循环 */
+        }
+
+        h1 {
+            font-family: "Kanit", sans-serif;
+            font-weight: 500;
+            color: #212222;
+        }
+
+        p {
+            font-family: "LXGW WenKai TC", cursive;
+        }
+
+        /* 自定義 CSS 樣式可以放在這裡 */
+        .navbar-top {
+
+            color: #ffffff;
+            /* 文字顏色 */
+            padding: 10px 0;
+            /* 上方區域內邊距 */
+        }
+
+        .navbar-top h1 {
+            margin: 0;
+            /* 品牌名稱上下間距 */
+            font-size: 2rem;
+            /* 品牌名稱字體大小 */
+            font-family: 'Pacifico', cursive;
+            /* 使用 Pacifico 字體 */
+            text-align: center;
+            /* 文字置中 */
+            color: #333;
+        }
+
+        .custom-navbar {
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            /* 确保导航栏在其他内容之上 */
+        }
+
+        .custom-navbar .navbar-nav {
+            text-align: center;
+            /* 導航連結置中 */
+        }
+
+        .custom-navbar .navbar-nav .nav-item {
+            margin: 0 16px;
+            /* 導航連結間距 */
+        }
+
+        .custom-navbar .navbar-nav .nav-link {
+            color: rgb(19, 20, 22);
+            /* 導航連結文字顏色 */
+            font-size: 15px;
+        }
+
+        .custom-navbar .navbar-nav .nav-link:hover {
+            color: #d95494;
+            /* 導航連結滑鼠懸停顏色 */
+        }
+
+        /* 整個網站的背景顏色 */
         body {
-            background-color: #dfc8f3;
-            /* 自定義背景色 */
+            background-color: #faecb9;
+            background-image: url('background.png');
+            /* 添加背景圖片 */
+            background-size: cover;
+            /* 背景圖片大小設定 */
+            background-position: center;
+            /* 背景圖片位置設定 */
         }
 
-        .card {
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin: 60px 0;
+            position: relative;
+            height: 550px;
+        }
+
+        .image-container img {
+            position: absolute;
+            animation: floatXY 10s infinite linear;
+        }
+
+        .custom-btn {
+            background-color: #faecb9;
+            /* 自定义背景颜色 */
+            color: #212222;
+            /* 文字颜色 */
+            border-color: #faecb9;
+            /* 边框颜色 */
+            border-radius: 70px;
+            /* 边框圆角 */
+            font-family: "LXGW WenKai TC", cursive;
+            /* 自定义字体 */
+            font-size: 14px;
+            /* 字体大小 */
+            padding: 10px 20px;
+            /* 按钮内边距 */
+        }
+
+        .custom-btn:hover {
+            background-color: #3598ee;
+            /* 悬停时的背景颜色 */
+            border-color: #3598ee;
+            /* 悬停时的边框颜色 */
+            color: #fff;
+            /* 悬停时的文字颜色 */
+        }
+
+        @keyframes floatXY {
+            0% {
+                transform: translate(300%, -35%);
+            }
+
+            25% {
+                transform: translate(0%, -80%);
+            }
+
+            50% {
+                transform: translate(50%, 100%);
+            }
+
+            65% {
+                transform: translate(-100%, 90%);
+            }
+
+            75% {
+                transform: translate(-300%, -80%);
+            }
+
+            100% {
+                transform: translate(300%, -35%);
+            }
+        }
+
+        /* 確保每張圖片有不同的動畫延遲 */
+        .image-container img:nth-child(1) {
+            animation-delay: 0s;
+            width: 300px;
+        }
+
+        .image-container img:nth-child(2) {
+            animation-delay: 1s;
+            width: 300px;
+        }
+
+        .image-container img:nth-child(3) {
+            animation-delay: 2.5s;
+            width: 250px;
+        }
+
+        .image-container img:nth-child(4) {
+            animation-delay: 4s;
+            width: 270px;
+        }
+
+        .image-container img:nth-child(5) {
+            animation-delay: 4.5s;
+            width: 190px;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .thumbnail.active {
+            border: 2px solid #d95494;
+            /* 活动状态的缩略图边框 */
+        }
+
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
             margin-bottom: 20px;
-            /* 设置卡片之间的默认间距 */
         }
 
-        .card:last-child {
-            margin-bottom: 0;
-            /* 最后一个卡片不要底部间距 */
+        .carousel {
+            margin-right: 20px;
         }
 
-        .card-img-top {
+        .carousel-item img {
+            width: 500px;
+            /* 设置固定宽度 */
             height: 500px;
-            /* 控制图片高度 */
+            /* 设置固定高度 */
             object-fit: cover;
-            /* 保持图片比例并填充整个容器 */
+            aspect-ratio: 5/5;
+            /* 保持图像的长宽比 */
         }
 
-        /* 如果需要在特定屏幕尺寸下更改间距，可以使用媒体查询 */
-        @media (max-width: 767.98px) {
-            .card {
-                margin-bottom: 10px;
-                /* 在小屏幕下减小间距 */
-            }
-
-            .carousel-item img {
-                max-width: 100%;
-                height: auto;
-            }
+        /* 自定义模态框样式 */
+        .modal-content {
+            background-color: #faecb9;
+            /* 自定义背景颜色 */
+            border-radius: 20px;
+            /* 边框圆角 */
+            color: #212222;
+            /* 文字颜色 */
+            font-family: "LXGW WenKai TC", cursive;
+            /* 自定义字体 */
         }
+        .modal-header {
+            border-bottom: 2px solid #d95494;
+            /* 自定义边框颜色 */
+        }
+
+        .modal-title {
+            font-size: 15px;
+            /* 自定义标题字体大小 */
+            color: #d95494;
+            /* 自定义标题颜色 */
+            font-family: "LXGW WenKai TC", cursive;
+            /* 自定义字体 */
+        }
+
     </style>
 </head>
 
 <body>
-    <style>
-        .navbar-brand {
-            margin-left: 20px;
-            /* 調整 navbar-brand 與左側的距離 */
-            color: #cf82e2;
-            /* 更改文字顏色 */
-            font-family:"Jersey 15 Charted", sans-serif;
-            /* 指定字體 */
-            font-weight: 400;
-            font-style: normal;
-            font-size: 25px;
-            /* 指定字體大小 */
-            font-weight: bold;
-            /* 指定字體粗細 */
-        }
 
-        .dropdown-menu .dropdown-item,
-        .dropdown-menu .dropdown-divider {
-            font-family: "Jersey 15 Charted", sans-serif;
-            /* 更改字體 */
-            font-size: 16px;
-            /* 更改字體大小 */
-            
-            /* 更改字體粗細 */
-            color: #cf82e2;
-            /* 更改字體顏色 */
-        }
-
-        .navbar-nav .nav-link.active,
-        .navbar-nav .nav-link.dropdown-toggle,
-        .nav-item .nav-link.disabled {
-            font-family: "Jersey 15 Charted", sans-serif;
-            /* 更改字體 */
-            font-size: 18px;
-            /* 更改字體大小 */
-            font-weight: bold;
-            /* 更改字體粗細 */
-            color: #cf82e2;
-            /* 更改字體顏色 */
-        }
-    </style>
-    </head>
-
-    <body>
-
-        <nav class="navbar navbar-expand-md bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">NATAIIE</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">HELLO☆☆☆</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                About me
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="https://www.instagram.com/nata1ie.h/">🩷
-                                        Instagram</a>
-                                </li>
-                                <li><a class="dropdown-item"
-                                        href="https://www.facebook.com/profile.php?id=100003223002753">💙 Facebook</a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">☆☆☆</a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- 上方區域 -->
+    <div class="navbar-top">
+        <div class="container">
+            <div class="centered-content">
+                <h1>nataiie'nail</h1> <!-- 品牌名稱置中 -->
             </div>
-        </nav>
+        </div>
+    </div>
 
-        </nav>
-        <div id="carouselExample" class="carousel slide">
-            <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+    <!-- 使用 Bootstrap 製作的導航欄 -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <!-- 可選擇性展開/折疊的按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 導航連結 -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="salon.html">甲沙龍</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">預約</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 圖片展示區塊 -->
+    <div class="container">
+        <div class="image-container">
+            <img src="IMG_1.png" alt="Image 1">
+            <img src="IMG_2.png" alt="Image 2">
+            <img src="IMG_3.png" alt="Image 3">
+            <img src="IMG_4.png" alt="Image 4" data-bs-toggle="modal" data-bs-target="#modal1">
+            <img src="IMG_5.png" alt="Image 5">
+        </div>
+        <div>
+            <p class="blink-text text-center mt-3">catch photo!</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">⚠️注意事項！</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <div class="modal-body">
+                    <p>＊非常重要＊非常重要＊非常重要</p>
+                    不可以放鳥！確定好時間再進行預約！
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+    <main class="container mt-5">
+        <!-- 新增的圖片瀏覽區域 -->
+        <div class="carousel-container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="a.jpg" class="d-block w-60" alt="...">
+                        <img src="IMG_6.jpg" class="d-block w-100" alt="IMG_6.jpg">
                     </div>
                     <div class="carousel-item">
-                        <img src="f.jpg" class="d-block w-60" alt="...">
+                        <img src="IMG_7.jpg" class="d-block w-100" alt="IMG_7.jpg">
                     </div>
                     <div class="carousel-item">
-                        <img src="h.jpg" class="d-block w-60" alt="...">
+                        <img src="IMG_8.JPG" class="d-block w-100" alt="IMG_8.JPG">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="IMG_9.JPG" class="d-block w-100" alt="IMG_9.JPG">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="IMG_10.jpg" class="d-block w-100" alt="IMG_10.jpg">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <div class="modal" tabindex="-1">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Modal body text goes here.</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container my-5"></div>
-            <div class="row">
-                <!-- 第一列貼文 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <style>
-                            .card-img-top {
-                                margin-bottom: 20px;
-                                /* 調整照片與貼文框架之間的距離 */
-                            }
-
-                            .card {
-                                margin-left: 50px;
-                                margin-right: 50px;
-                                /* 調整貼文框架與左側邊界的距離 */
-                            }
-
-                            .card-body {
-                                padding-top: 20px;
-                                /* 調整貼文內容與貼文框架之間的距離 */
-                            }
-                        </style>
-
-
-                        <img src="photo3.jpg" class="card-img-top" alt="Post 3">
-                        <div class="card-body">
-                            <h5 class="card-title">· · • • • ✤ • • • · ·</h5>
-                            <p class="card-text">ᴬʳᵒᵘⁿᵈ ᵗʰᵉ ᵍᵃˡᵃˣʸ, ᵗʰᵉʳᵉ ᵃʳᵉ ⁿᵒ ᵇʳⁱᵍʰᵗᵉʳ ˢᵗᵃʳˢ ᵗʰᵃⁿ ʸᵒᵘ.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="photo2.jpg" class="card-img-top" alt="Post 2">
-                        <div class="card-body">
-                            <h5 class="card-title">♡ ••┈┈┈┈•• ♡</h5>
-                            <p class="card-text">ᴸⁱᵛᵉ ᵃ ᵍᵒᵒᵈ ˡⁱᶠᵉ ᵐᵉᵉᵗ ˢˡᵒʷˡʸ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="photo1.jpg" class="card-img-top" alt="Post 1">
-                        <div class="card-body">
-                            <h5 class="card-title">* ੈ✩‧₊˚</h5>
-                            <p class="card-text">ᴵ ʰᵒᵖᵉ ʸᵒᵘ'ʳᵉ ʰᵉʳᵉ ᶠᵒʳ ᵐᵉ </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 第二列貼文 -->
-            <div class="row">
-                <div class="col-md-4 mb-4 mt-1">
-                    <div class="card">
-                        <img src="photo4.jpg" class="card-img-top" alt="Post 4">
-                        <div class="card-body">
-                            <h5 class="card-title">· · • • • ✤ • • • · ·</h5>
-                            <p class="card-text">ᴰᵒⁿ'ᵗ ᵉˣᵖᵉᶜᵗ ᵖᵉᵒᵖˡᵉ ᵃⁿᵈ ᵖᵉᵒᵖˡᵉ ᵗᵒ ᵇᵉ ᵉˣᵖᵉᶜᵗᵉᵈ ᵇʸ ᵃⁿʸᵒⁿᵉ .</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="photo5.jpg" class="card-img-top" alt="Post 5">
-                        <div class="card-body">
-                            <h5 class="card-title">♡ ••┈┈┈┈•• ♡</h5>
-                            <p class="card-text">ʸᵒᵘ ᵃʳᵉ ᵇᵃᶜᵏˡⁱᵗ ʷⁱᵗʰ ᵃˡˡ ᵗʰᵉ ᵍᵒᵒᵈ ᵗʰⁱⁿᵍˢ ⁱⁿ ᵗʰⁱˢ ʷᵒʳˡᵈ.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="photo6.jpg" class="card-img-top" alt="Post 6">
-                        <div class="card-body">
-                            <h5 class="card-title">* ੈ✩‧₊˚</h5>
-                            <p class="card-text">ᴾʳᵒᵇᵃᵇˡʸ ᵍʳᵒʷⁱⁿᵍ ᵘᵖ ᵃⁿᵈ ˡᵒˢⁱⁿᵍ ᵐʸ ᶠᵒʳᵐᵉʳˢᵉˡᶠ.</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="zoomedImage" class="modal">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <img class="modal-content" id="zoomedImg">
-                </div>
-
-
-
+            <div class="thumbnail-container">
+                <img src="IMG_6.jpg" class="thumbnail active" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="0" aria-label="Slide 1">
+                <img src="IMG_7.jpg" class="thumbnail" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2">
+                <img src="IMG_8.JPG" class="thumbnail" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3">
+                <img src="IMG_10.jpg" class="thumbnail" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 4">
+                <img src="IMG_9.JPG" class="thumbnail" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                    aria-label="Slide 5">
             </div>
         </div>
-
+        <div class="row">
+            <div class="col-12">
+                <h1>Welcome to nataiie'nail</h1>
+                <p>.˚⊹ ⁺‧ ⊹˚.</p>
+                <p>新手累積作品中…ᐢｰ̀ ｰ́ᐢ</p>
+                <p>☆*近銘傳大學</p>
+                <p>☆*居家工作室</p>
+                <p>☆*無延甲、不接病甲</p>
+                <p>*如不得已，最多可更改一次時間!! </p>
+                <p>˙˚ ˚˙</p>
+                <p> 歡迎找我把手收變漂亮</p>
+                <button id="clickButton" class="btn custom-btn"
+                    onclick="window.location.href='booking.html'">點我預約</button>
+            </div>
         </div>
+    </main>
+
+    <footer class="text-black text-center py-3 mt-5">
+        <p>&copy; 2024 nataiie'nail</p>
+    </footer>
 
 
-        <!-- 回到頂部按鈕 -->
-        <button class="scroll-to-top" onclick="scrollToTop()">☝︎</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 引入 Bootstrap 和相關 JavaScript 庫 -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-Sc4TEyrO64yZfsqk+3RB1c2kqOYd+uE5Lbc3jS8lo2WbGOvFk/K4NgZO6IaX5S5P"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.min.js"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous"></script>
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        const carouselItems = document.querySelectorAll('.carousel-item');
 
-        <script>
-            // 滾動到頁面頂部的函數
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            }
-
-            // 監聽頁面滾動事件，顯示或隱藏回到頂部按鈕
-            window.addEventListener("scroll", function () {
-                var scrollButton = document.querySelector(".scroll-to-top");
-                if (window.pageYOffset > 100) {
-                    scrollButton.style.display = "block";
-                } else {
-                    scrollButton.style.display = "none";
-                }
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener('click', () => {
+                // 移除所有缩略图的活动状态
+                thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                // 设置当前缩略图为活动状态
+                thumbnail.classList.add('active');
+                // 移动到相应的幻灯片
+                const carousel = document.querySelector('#carouselExampleIndicators');
+                const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+                bsCarousel.to(index);
             });
-        </script>
-        <script>
-            function openModal() {
-                document.getElementById('zoomedImage').style.display = "block";
-            }
+        });
+    </script>
 
-            function closeModal() {
-                document.getElementById('zoomedImage').style.display = "none";
-            }
-
-            var images = document.querySelectorAll('.card-img-top');
-            images.forEach(function (img) {
-                img.addEventListener('click', function () {
-                    var zoomedImg = document.getElementById('zoomedImg');
-                    zoomedImg.src = this.src;
-                    zoomedImg.style.maxWidth = "70%"; // 設置最大寬度
-                    zoomedImg.style.maxHeight = "70%"; // 設置最大高度
-                    zoomedImg.style.width = "auto"; // 設置寬度自動適應
-                    zoomedImg.style.height = "auto"; // 設置高度自動適應
-                    openModal();
-                });
-            });
-
-        </script>
-
-
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+</body>
 
 </html>
